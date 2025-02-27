@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         <div className='flex items-center gap-4'>
-          <nav className='ml-auto flex gap-4'>
+          <nav className='ml-auto flex pr-3 gap-4'>
             <Link
               href='#about'
               className='text-sm font-medium hover:underline underline-offset-4'
@@ -79,7 +79,7 @@ export default function Home() {
         <section className='relative h-[600px]'>
           <Image
             src='/websiteContent/imageSix.jpg'
-            alt='Wedding party walking on a New York City street'
+            alt='Grand exit for bride and groom surrounded by guests'
             layout='fill'
             objectFit='cover'
             priority
@@ -218,7 +218,7 @@ export default function Home() {
               <Image
                 height='40'
                 width='40'
-                alt='Featured on Zola'
+                alt='Featured on Zola image'
                 src='/websiteContent/zolaImage.png'
               />
             </a>
