@@ -1,12 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useScrollToHash } from './hooks/useScrollToHash';
 import { Carousel } from './components/Carousel';
 import { Instagram } from 'lucide-react';
-import { Gallery, Item } from 'react-photoswipe-gallery';
 
 const galleryImages = [
   '/websiteContent/imageOne.jpg',
@@ -40,7 +38,8 @@ export default function Home() {
             </span>
           </Link>
         </div>
-        <div className=' flex h-14 items-center pl-3 pr-3'>
+
+        <div className='flex items-center gap-4'>
           <nav className='ml-auto flex gap-4'>
             <Link
               href='#about'
@@ -188,7 +187,7 @@ export default function Home() {
           <Carousel images={galleryImages} />
         </section>
 
-        <section id='social' className='py-16 '>
+        <section id='social' className='p-16 '>
           <h2 className='text-3xl font-medium mb-8 text-center'>
             Connect With Us
           </h2>
