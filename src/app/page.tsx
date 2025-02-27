@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Carousel } from './components/Carousel';
 import { Instagram } from 'lucide-react';
+import handler from './action';
 
 const galleryImages = [
   '/websiteContent/imageOne.jpg',
@@ -236,12 +237,83 @@ export default function Home() {
             </a>
           </div>
         </section>
+        {/* CONTACT SECTION */}
+        <section id='contact' className='p-16 bg-muted'>
+          <h2 className='text-3xl font-medium mb-8 text-center'>
+            Get in Touch
+          </h2>
+          <form action={handler} className='max-w-md mx-auto space-y-6'>
+            <div>
+              <label
+                htmlFor='name'
+                className='block text-sm font-medium text-gray-700 mb-1'
+              >
+                Name
+              </label>
+              <input
+                type='text'
+                id='name'
+                name='name'
+                required
+                className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500'
+              />
+            </div>
+            <div>
+              <label
+                htmlFor='email'
+                className='block text-sm font-medium text-gray-700 mb-1'
+              >
+                Email
+              </label>
+              <input
+                type='email'
+                id='email'
+                name='email'
+                required
+                className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500'
+              />
+            </div>
+            <div>
+              <label
+                htmlFor='message'
+                className='block text-sm font-medium text-gray-700 mb-1'
+              >
+                Message
+              </label>
+              <textarea
+                id='message'
+                name='message'
+                required
+                rows={4}
+                className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500'
+              />
+            </div>
+            <button
+              type='submit'
+              className='w-full rounded-lg bg-stone-700 text-white py-3 px-6 text-lg font-semibold
+                transition-all duration-300 ease-in-out
+                hover:bg-stone-600 hover:shadow-lg
+                focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-opacity-50'
+            >
+              Send Message
+            </button>
+          </form>
+        </section>
       </main>
       {/* FOOTER */}
       <footer className='border-t py-6 text-center'>
         <p>
           &copy; {new Date().getFullYear()} Elizabeth Treimanis Events. All
           rights reserved.
+          <br />
+          <a
+            className='transition hover:underline hover:text-blue-500'
+            href='mailto:elizabeth@elizabethtreimanisevents.com'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            elizabeth@elizabethtreimanisevents.com
+          </a>
         </p>
       </footer>
     </div>
