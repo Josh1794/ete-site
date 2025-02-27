@@ -37,13 +37,16 @@ export const Carousel: React.FC<CarouselProps> = ({ images }) => {
           {images.map((image: CarouselImage, index) => (
             <div
               key={index}
-              className='flex-[0_0_95%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 pl-4'
+              className='flex-[0_0_95%] md:flex-[0_0_80%] lg:flex-[0_0_80%] min-w-0 pl-4'
             >
               <div className='relative aspect-[16/9] cursor-pointer overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]'>
                 <Image
                   src={image.path}
                   alt={image.alt}
                   fill
+                  // objectFit='fill'
+                  // height={1365}
+                  // width={2048}
                   className='object-cover transition-transform duration-300'
                   priority={index === 0}
                 />

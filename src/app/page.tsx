@@ -6,7 +6,7 @@ import handler from './action';
 
 const galleryImages = [
   {
-    path: '/websiteContent/imageOne.jpg',
+    path: '/websiteContent/image1.png',
     alt: 'Bride with mother and sister getting ready',
   },
   {
