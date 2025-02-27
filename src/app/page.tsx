@@ -85,6 +85,12 @@ export default function Home() {
             >
               Socials
             </Link>
+            <Link
+              href='#contact'
+              className='text-sm font-medium hover:underline underline-offset-4'
+            >
+              Contact
+            </Link>
           </nav>
         </div>
       </header>
@@ -104,9 +110,10 @@ export default function Home() {
                 Elizabeth Treimanis Events
               </h1>
               <a
-                href='mailto:elizabeth@elizabethtreimanisevents.com'
-                target='_blank'
-                rel='noopener noreferrer'
+                href='#contact'
+                // href='mailto:elizabeth@elizabethtreimanisevents.com'
+                // target='_blank'
+                // rel='noopener noreferrer'
               >
                 <button
                   className='rounded-lg bg-stone-700 text-white py-3 px-6 text-lg font-semibold
@@ -194,9 +201,9 @@ export default function Home() {
         </section>
         {/* GALLERY SECTION */}
         <section id='gallery' className='py-16 bg-muted'>
-          <h2 className='text-3xl font-medium mb-8 text-center'>
+          {/* <h2 className='text-3xl font-medium mb-8 text-center'>
             Special Moments
-          </h2>
+          </h2> */}
           <Carousel images={galleryImages} />
         </section>
         {/* SOCIALS SECTION */}
