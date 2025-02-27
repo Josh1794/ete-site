@@ -1,8 +1,5 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { useScrollToHash } from './hooks/useScrollToHash';
 import { Carousel } from './components/Carousel';
 import { Instagram } from 'lucide-react';
 
@@ -32,8 +29,6 @@ const BlueSkyIcon = () => (
 );
 
 export default function Home() {
-  useScrollToHash();
-
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
       <header className='flex flex-row items-center justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>

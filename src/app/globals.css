@@ -77,3 +77,14 @@
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value to match your header height */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
