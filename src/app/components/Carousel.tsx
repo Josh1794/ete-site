@@ -11,7 +11,7 @@ interface CarouselProps {
   onImageClick: (index: number) => void;
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ images, onImageClick }) => {
+export const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'center',
@@ -50,10 +50,7 @@ export const Carousel: React.FC<CarouselProps> = ({ images, onImageClick }) => {
               key={index}
               className='flex-[0_0_100%] min-w- md:flex-[0_0_80%] lg:flex-[0_0_70%] pl-4'
             >
-              <div
-                className='relative aspect-[16/9] cursor-pointer overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]'
-                onClick={() => onImageClick(index)}
-              >
+              <div className='relative aspect-[16/9] cursor-pointer overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]'>
                 <Image
                   src={src || '/placeholder.svg'}
                   alt={`Event photo ${index + 1}`}
@@ -70,16 +67,16 @@ export const Carousel: React.FC<CarouselProps> = ({ images, onImageClick }) => {
       <button
         className='absolute top-1/2 left-4 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white/90'
         onClick={scrollPrev}
-        size='icon'
-        variant='secondary'
+        // size='icon'
+        // variant='secondary'
       >
         <ChevronLeft className='h-4 w-4' />
       </button>
       <button
         className='absolute top-1/2 right-4 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white/90'
         onClick={scrollNext}
-        size='icon'
-        variant='secondary'
+        // size='icon'
+        // variant='secondary'
       >
         <ChevronRight className='h-4 w-4' />
       </button>

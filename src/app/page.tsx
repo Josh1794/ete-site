@@ -18,16 +18,6 @@ const galleryImages = [
   '/websiteContent/imageSeven.jpg',
 ];
 
-const galleryDescriptions = [
-  'Our first bride Virginia with her mother and sister.',
-  'Intimate dinner with stunning white floral arrangements',
-  'Groomsmen sharing a laugh before the ceremony',
-  'Partying All Night!',
-  "It's Hora Time!",
-  'Beautiful exit surrounded by celebrating guests',
-  'Newlyweds sharing a romantic moment in a classic NYC taxi',
-];
-
 const BlueSkyIcon = () => (
   <Image
     src='/websiteContent/Bluesky-Logo-Vector.svg-.png'
@@ -39,14 +29,6 @@ const BlueSkyIcon = () => (
 
 export default function Home() {
   useScrollToHash();
-
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
-
-  const openLightbox = (index: number) => {
-    setPhotoIndex(index);
-    setLightboxOpen(true);
-  };
 
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
@@ -210,7 +192,7 @@ export default function Home() {
             <h2 className='text-3xl font-medium mb-8 text-center'>
               Special Moments
             </h2>
-            <Carousel images={galleryImages} onImageClick={openLightbox} />
+            <Carousel images={galleryImages} />
           </div>
         </section>
 
@@ -261,26 +243,6 @@ export default function Home() {
           rights reserved.
         </p>
       </footer>
-
-      {lightboxOpen && (
-        <Gallery>
-          <Carousel onImageClick={openLightbox} images={galleryImages} />
-          {galleryImages.map((src, index) => (
-            <Item
-              key={index}
-              original={src}
-              thumbnail={src}
-              width='1024'
-              height='768'
-              caption={galleryDescriptions[index]}
-            >
-              {({ ref }) => (
-                <div style={{ display: 'none' }} ref={ref as any} />
-              )}
-            </Item>
-          ))}
-        </Gallery>
-      )}
     </div>
   );
 }
