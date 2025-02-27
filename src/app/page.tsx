@@ -14,9 +14,21 @@ const galleryImages = [
 ];
 
 const services = [
-  { name: 'Wedding Planning' },
-  { name: 'Corporate Events' },
-  { name: 'Social Gatherings' },
+  {
+    name: 'Partial Planning',
+    description:
+      'Partial Planning or Month of Coordination are for the couples that have started planning their wedding but want an expert to step in for the final phases. For all packages, we will communicate from the time of booking. For partial planning, the bulk of our work together starts 12 weeks out. For month of, we start meeting weekly 6 weeks out and includes timeline creation.',
+  },
+  {
+    name: 'Day-of Coordination',
+    description:
+      'Day of Coordination is for the couple who has planned their whole wedding and needs someone to execute their plans for the day. Does not include timeline creation.',
+  },
+  {
+    name: 'Month-of Coordination',
+    description:
+      'Month of Coordination is for the couple who has planned their whole wedding and needs someone to execute their plans for the day. Includes timeline creation.',
+  },
 ];
 
 const BlueSkyIcon = () => (
@@ -151,8 +163,7 @@ export default function Home() {
               >
                 <h3 className='text-xl font-normal mb-4'>{service.name}</h3>
                 <p className='text-muted-foreground font-thin'>
-                  From concept to execution, we handle every detail to make your{' '}
-                  {service.name.toLowerCase()} truly memorable.
+                  {service.description}
                 </p>
               </div>
             ))}
@@ -173,8 +184,9 @@ export default function Home() {
             <Image
               src='/websiteContent/social media.png'
               alt='Collage of logos from venues where we have worked'
-              width={1200}
-              height={800}
+              layout='responsive'
+              width='400'
+              height='400'
               className='col-span-2 md:col-span-3 lg:col-span-4 w-full h-auto'
             />
           </div>
