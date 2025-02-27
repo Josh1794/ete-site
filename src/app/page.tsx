@@ -128,8 +128,8 @@ export default function Home() {
             From the time you book, we provide tools, guidance, and open
             communication, ensuring a seamless handoff when we step in. Whether
             you book us for partial planning, month-of or day-of coordination,
-            we're here for you with vendor recommendations, expert advice, or
-            for quick contract reviews. We also have connections with an
+            we&apos;re here for you with vendor recommendations, expert advice,
+            or for quick contract reviews. We also have connections with an
             incredible group of vendors. We believe in supporting individual
             business owners and artists, especially those who work in weddings
             alongside other pursuits in theatre, fashion, beauty and other
@@ -161,13 +161,13 @@ export default function Home() {
 
         <section id='venues' className='p-16 '>
           <h2 className='text-3xl font-medium mb-8 text-center'>
-            Venues We've Worked With
+            Venues We&apos;ve Worked With
           </h2>
           <p className='text-lg text-center mb-12 max-w-3xl mx-auto text-muted-foreground'>
-            We've had the privilege of creating unforgettable events at some of
-            New York's most prestigious venues. Our established relationships
-            with these locations, and others, ensure a seamless planning
-            experience.
+            We&apos;ve had the privilege of creating unforgettable events at
+            some of New York&apos;s most prestigious venues. Our established
+            relationships with these locations, and others, ensure a seamless
+            planning experience.
           </p>
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center'>
             <Image
