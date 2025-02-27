@@ -282,11 +282,26 @@ export default function Home() {
             </div>
             <div>
               <label
+                htmlFor='eventDate'
+                className='block text-sm font-medium text-gray-700 mb-1'
+              >
+                Event Date
+              </label>
+              <input
+                type='date'
+                id='eventDate'
+                name='eventDate'
+                className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500'
+              />
+            </div>
+            <div>
+              <label
                 htmlFor='message'
                 className='block text-sm font-medium text-gray-700 mb-1'
               >
                 Message
               </label>
+
               <textarea
                 id='message'
                 name='message'
