@@ -16,6 +16,12 @@ const galleryImages = [
   '/websiteContent/imageSeven.jpeg',
 ];
 
+const services = [
+  { name: 'Wedding Planning' },
+  { name: 'Corporate Events' },
+  { name: 'Social Gatherings' },
+];
+
 const BlueSkyIcon = () => (
   <Image
     src='/websiteContent/Bluesky-Logo-Vector.svg-.png'
@@ -30,7 +36,7 @@ export default function Home() {
 
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
-      <header className='flex flex-row items-center justify-between px-4 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+      <header className='flex flex-row items-center justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
         <div className=' flex h-14 items-center pl-3 pr-3'>
           <Link href='/' className='flex items-center space-x-2'>
             <span className='font-normal text-xl'>
@@ -38,8 +44,9 @@ export default function Home() {
             </span>
           </Link>
         </div>
+
         <div className='flex items-center gap-4'>
-          <nav className='ml-auto flex gap-4'>
+          <nav className='ml-auto flex pr-3 gap-4'>
             <Link
               href='#about'
               className='text-sm font-medium hover:underline underline-offset-4'
@@ -78,7 +85,7 @@ export default function Home() {
         <section className='relative h-[600px]'>
           <Image
             src='/websiteContent/imageSix.jpg'
-            alt='Wedding party walking on a New York City street'
+            alt='Grand exit for bride and groom surrounded by guests'
             layout='fill'
             objectFit='cover'
             priority
@@ -127,8 +134,8 @@ export default function Home() {
             From the time you book, we provide tools, guidance, and open
             communication, ensuring a seamless handoff when we step in. Whether
             you book us for partial planning, month-of or day-of coordination,
-            we're here for you with vendor recommendations, expert advice, or
-            for quick contract reviews. We also have connections with an
+            we&apos;re here for you with vendor recommendations, expert advice,
+            or for quick contract reviews. We also have connections with an
             incredible group of vendors. We believe in supporting individual
             business owners and artists, especially those who work in weddings
             alongside other pursuits in theatre, fashion, beauty and other
@@ -141,37 +148,35 @@ export default function Home() {
             Our Services
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            {['Wedding Planning', 'Corporate Events', 'Social Gatherings'].map(
-              (service) => (
-                <div
-                  key={service}
-                  className='bg-background border rounded-lg p-6 text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg'
-                >
-                  <h3 className='text-xl font-normal mb-4'>{service}</h3>
-                  <p className='text-muted-foreground font-thin'>
-                    From concept to execution, we handle every detail to make
-                    your {service.toLowerCase()} truly memorable.
-                  </p>
-                </div>
-              )
-            )}
+            {services.map((service) => (
+              <div
+                key={service.name}
+                className='bg-white border rounded-lg p-6 text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg'
+              >
+                <h3 className='text-xl font-normal mb-4'>{service.name}</h3>
+                <p className='text-muted-foreground font-thin'>
+                  From concept to execution, we handle every detail to make your{' '}
+                  {service.name.toLowerCase()} truly memorable.
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id='venues' className='p-16 '>
           <h2 className='text-3xl font-medium mb-8 text-center'>
-            Venues We've Worked With
+            Venues We&apos;ve Worked With
           </h2>
           <p className='text-lg text-center mb-12 max-w-3xl mx-auto text-muted-foreground'>
-            We've had the privilege of creating unforgettable events at some of
-            New York's most prestigious venues. Our established relationships
-            with these locations, and others, ensure a seamless planning
-            experience.
+            We&apos;ve had the privilege of creating unforgettable events at
+            some of New York&apos;s most prestigious venues. Our established
+            relationships with these locations, and others, ensure a seamless
+            planning experience.
           </p>
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center'>
             <Image
               src='/websiteContent/social media.png'
-              alt='Partner Venues'
+              alt='Collage of logos from venues where we have worked'
               width={1200}
               height={800}
               className='col-span-2 md:col-span-3 lg:col-span-4 w-full h-auto'
@@ -217,7 +222,7 @@ export default function Home() {
               <Image
                 height='40'
                 width='40'
-                alt='Featured on Zola'
+                alt='Featured on Zola image'
                 src='/websiteContent/zolaImage.png'
               />
             </a>
