@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Carousel } from './components/Carousel';
 import { Instagram } from 'lucide-react';
 import handler from './action';
-import path from 'path';
 
 const galleryImages = [
   {
