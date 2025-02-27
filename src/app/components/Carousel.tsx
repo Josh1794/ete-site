@@ -8,7 +8,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselProps {
   images: string[];
-  onImageClick: (index: number) => void;
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ images }) => {
