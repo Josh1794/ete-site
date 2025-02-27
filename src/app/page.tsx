@@ -3,15 +3,57 @@ import Link from 'next/link';
 import { Carousel } from './components/Carousel';
 import { Instagram } from 'lucide-react';
 import handler from './action';
+import path from 'path';
 
 const galleryImages = [
-  '/websiteContent/imageOne.jpg',
-  '/websiteContent/imageTwo.jpg',
-  '/websiteContent/imageThree.jpeg',
-  '/websiteContent/imageFour.jpeg',
-  '/websiteContent/imageFive.JPG',
-  '/websiteContent/imageSix.jpg',
-  '/websiteContent/imageSeven.jpeg',
+  {
+    path: '/websiteContent/imageOne.jpg',
+    alt: 'Bride with mother and sister getting ready',
+  },
+  {
+    path: '/websiteContent/imageTwo.jpg',
+    alt: 'Bride and groom enjoying a romantic dinner',
+  },
+  {
+    path: '/websiteContent/imageThree.jpeg',
+    alt: 'Groomsmen laughing together',
+  },
+  {
+    path: '/websiteContent/imageFour.jpeg',
+    alt: 'Guests parting on the dance floor',
+  },
+  {
+    path: '/websiteContent/imageFive.JPG',
+    alt: 'Bride and groom doing the hora dance',
+  },
+  {
+    path: '/websiteContent/image6.png',
+    alt: 'Bride and groom exiting the party surrounded by guests',
+  },
+  {
+    path: '/websiteContent/imageSeven.jpeg',
+    alt: 'Bride and groom sharing a moment in a vintage NYC cab',
+  },
+  {
+    path: '/websiteContent/image8.png',
+    alt: 'Bride feeding a bridesmaid pizza on the dance floor',
+  },
+  {
+    path: '/websiteContent/image9.png',
+    alt: 'Bride and groom exiting the ceremony with guests blowing bubbles',
+  },
+  {
+    path: '/websiteContent/image10.png',
+    alt: 'Bride and groom under the Huppah at the ceremony',
+  },
+  {
+    path: '/websiteContent/image11.png',
+    alt: 'Bride and groom exiting the ceremony with guests blowing bubbles',
+  },
+  {
+    path: '/websiteContent/image12.JPG',
+    alt: 'Bride and bridesmaids walking down a NYC street',
+  },
 ];
 
 const services = [

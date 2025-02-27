@@ -6,8 +6,13 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
+interface CarouselImage {
+  path: string;
+  alt: string;
+}
+
 interface CarouselProps {
-  images: string[];
+  images: CarouselImage[]; // Define the prop type as array of CarouselImage
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ images }) => {
@@ -29,15 +34,15 @@ export const Carousel: React.FC<CarouselProps> = ({ images }) => {
     <div className='relative mx-auto max-w-screen-2xl'>
       <div className='overflow-hidden rounded-lg' ref={emblaRef}>
         <div className='flex gap-4'>
-          {images.map((src, index) => (
+          {images.map((image: CarouselImage, index) => (
             <div
               key={index}
               className='flex-[0_0_95%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 pl-4'
             >
               <div className='relative aspect-[16/9] cursor-pointer overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]'>
                 <Image
-                  src={src}
-                  alt={`Event photo ${index + 1}`}
+                  src={image.path}
+                  alt={image.alt}
                   fill
                   className='object-cover transition-transform duration-300'
                   priority={index === 0}
