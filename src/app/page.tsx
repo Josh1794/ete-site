@@ -31,8 +31,8 @@ const BlueSkyIcon = () => (
 export default function Home() {
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
-      <header className='flex flex-row items-center justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-        <div className=' flex h-14 items-center pl-3 pr-3'>
+      <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 '>
+        <div className='hidden md:flex h-14 items-center pl-3 pr-3'>
           <Link href='/' className='flex items-center space-x-2'>
             <span className='font-normal text-xl'>
               Elizabeth Treimanis Events
@@ -110,10 +110,11 @@ export default function Home() {
         </section>
 
         <section id='about' className=' p-16'>
-          <h2 className='text-3xl font-medium mb-6 text-center'>
+          <h2 className=' md:text-3xl font-medium mb-6 text-center'>
             About Elizabeth Treimanis Events
           </h2>
-          <p className='text-lg text-center max-w-1xl mx-auto'>
+
+          <p className='md:text-lg text-center max-w-1xl mx-auto'>
             Elizabeth Treimanis Events is a wedding coordination firm founded by
             Elizabeth Treimanis, a former executive assistant in luxury fashion
             and beauty. Her industry experience enables her to add a chic,
@@ -125,7 +126,7 @@ export default function Home() {
             wedding industry and beyond. Photo Credits: Sasha Erwitt, Tati and
             Roman, Maria Burton
           </p>
-          <p className='text-lg text-center max-w-1xl mx-auto mt-3'>
+          <p className='md:text-lg text-center max-w-1xl mx-auto mt-3'>
             From the time you book, we provide tools, guidance, and open
             communication, ensuring a seamless handoff when we step in. Whether
             you book us for partial planning, month-of or day-of coordination,
