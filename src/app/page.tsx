@@ -9,7 +9,7 @@ const galleryImages = [
   '/websiteContent/imageTwo.jpg',
   '/websiteContent/imageThree.jpeg',
   '/websiteContent/imageFour.jpeg',
-  '/websiteContent/imageFive.jpg',
+  '/websiteContent/imageFive.JPG',
   '/websiteContent/imageSix.jpg',
   '/websiteContent/imageSeven.jpeg',
 ];
