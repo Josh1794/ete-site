@@ -31,7 +31,7 @@ const BlueSkyIcon = () => (
 export default function Home() {
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
-      <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 '>
+      <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 '>
         <div className='hidden md:flex h-14 items-center pl-3 pr-3'>
           <Link href='/' className='flex items-center space-x-2'>
             <span className='font-normal text-xl'>
@@ -39,7 +39,7 @@ export default function Home() {
             </span>
           </Link>
         </div>
-
+        {/* RIGHT NAV */}
         <div className='flex items-center gap-4'>
           <nav className='ml-auto flex pr-3 gap-4'>
             <Link
@@ -75,7 +75,7 @@ export default function Home() {
           </nav>
         </div>
       </header>
-
+      {/* MAIN SECTION */}
       <main className='flex-1'>
         <section className='relative h-[600px]'>
           <Image
@@ -108,7 +108,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        {/* ABOUT SECTION */}
         <section id='about' className=' p-16'>
           <h2 className=' md:text-3xl font-medium mb-6 text-center'>
             About Elizabeth Treimanis Events
@@ -138,7 +138,7 @@ export default function Home() {
             creative industries.
           </p>
         </section>
-
+        {/* SERVICES SECTION */}
         <section id='services' className='p-16 bg-muted'>
           <h2 className='text-3xl font-medium mb-6 text-center'>
             Our Services
@@ -158,7 +158,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-
+        {/* VENUES SECTION */}
         <section id='venues' className='p-16 '>
           <h2 className='text-3xl font-medium mb-8 text-center'>
             Venues We&apos;ve Worked With
@@ -179,14 +179,14 @@ export default function Home() {
             />
           </div>
         </section>
-
+        {/* GALLERY SECTION */}
         <section id='gallery' className='py-16 bg-muted'>
           <h2 className='text-3xl font-medium mb-8 text-center'>
             Special Moments
           </h2>
           <Carousel images={galleryImages} />
         </section>
-
+        {/* SOCIALS SECTION */}
         <section id='social' className='p-16 '>
           <h2 className='text-3xl font-medium mb-8 text-center'>
             Connect With Us
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-
+      {/* FOOTER */}
       <footer className='border-t py-6 text-center'>
         <p>
           &copy; {new Date().getFullYear()} Elizabeth Treimanis Events. All
