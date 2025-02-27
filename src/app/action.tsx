@@ -1,19 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use server';
 import { Resend } from 'resend';
-interface FormData {
-  [x: string]: any;
-  name: string;
-  email: string;
-  message: string;
-}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function handler(formData: FormData, res: any) {
+export default async function handler(formData: FormData) {
   const resend = new Resend(process.env.RESEND_KEY);
 
-  const name = formData.get('name');
-  const email = formData.get('email');
-  const message = formData.get('message');
+  const name = formData.get('name') as string | null;
+  const email = formData.get('email') as string | null;
+  const message = formData.get('message') as string | null;
 
   const { data, error } = await resend.emails.send({
     from: `${process.env.EMAIL_USER}`,
@@ -21,14 +16,11 @@ export default async function handler(formData: FormData, res: any) {
     subject: `WEBSITE CONTACT FROM ${name}`,
     react: (
       <div>
-        <h5>From: {name}</h5>
-        <h5>Email: {email}</h5>
-        <p>{message}</p>
+        <h5>From: {name ?? 'N/A'}</h5>
+        <h5>Email: {email ?? 'N/A'}</h5>
+        <p>{message ?? 'N/A'}</p>
       </div>
     ),
   });
-  console.log(data);
-  if (error) {
-    return res.status(400).json(error);
-  }
+  console.log(data, error);
 }
