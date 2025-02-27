@@ -22,6 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <meta property='og:image' content='Link preview image URL'></meta>
       <body className={`${raleway.className} font-raleway`}>{children}</body>
     </html>
   );
