@@ -16,6 +16,12 @@ const galleryImages = [
   '/websiteContent/imageSeven.jpeg',
 ];
 
+const services = [
+  { name: 'Wedding Planning' },
+  { name: 'Corporate Events' },
+  { name: 'Social Gatherings' },
+];
+
 const BlueSkyIcon = () => (
   <Image
     src='/websiteContent/Bluesky-Logo-Vector.svg-.png'
@@ -142,20 +148,18 @@ export default function Home() {
             Our Services
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            {['Wedding Planning', 'Corporate Events', 'Social Gatherings'].map(
-              (service) => (
-                <div
-                  key={service}
-                  className='bg-white border rounded-lg p-6 text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg'
-                >
-                  <h3 className='text-xl font-normal mb-4'>{service}</h3>
-                  <p className='text-muted-foreground font-thin'>
-                    From concept to execution, we handle every detail to make
-                    your {service.toLowerCase()} truly memorable.
-                  </p>
-                </div>
-              )
-            )}
+            {services.map((service) => (
+              <div
+                key={service.name}
+                className='bg-white border rounded-lg p-6 text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg'
+              >
+                <h3 className='text-xl font-normal mb-4'>{service.name}</h3>
+                <p className='text-muted-foreground font-thin'>
+                  From concept to execution, we handle every detail to make your{' '}
+                  {service.name.toLowerCase()} truly memorable.
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -172,7 +176,7 @@ export default function Home() {
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center'>
             <Image
               src='/websiteContent/social media.png'
-              alt='Partner Venues'
+              alt='Collage of logos from venues where we have worked'
               width={1200}
               height={800}
               className='col-span-2 md:col-span-3 lg:col-span-4 w-full h-auto'

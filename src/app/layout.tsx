@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${raleway.variable} font-sans`}>{children}</body>
+      <body className={`${raleway.className} font-raleway`}>{children}</body>
     </html>
   );
 }
