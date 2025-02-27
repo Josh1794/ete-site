@@ -1,10 +1,9 @@
 'use client';
 
-import type React from 'react';
-import { useState, useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 interface CarouselProps {
   images: string[];
@@ -16,46 +15,30 @@ export const Carousel: React.FC<CarouselProps> = ({ images }) => {
     align: 'center',
     containScroll: 'trimSnaps',
   });
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-  const scrollPrev = useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
-  const scrollNext = useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  );
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
 
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-  }, [emblaApi, onSelect]);
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
-    <div className='relative mx-auto'>
-      <div className='overflow-hidden' ref={emblaRef}>
-        <div className='flex'>
+    <div className='relative mx-auto max-w-screen-2xl'>
+      <div className='overflow-hidden rounded-lg' ref={emblaRef}>
+        <div className='flex gap-4'>
           {images.map((src, index) => (
             <div
               key={index}
-              className='flex-[0_0_100%] min-w- md:flex-[0_0_80%] lg:flex-[0_0_70%] pl-4'
+              className='flex-[0_0_95%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 pl-4'
             >
               <div className='relative aspect-[16/9] cursor-pointer overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]'>
                 <Image
-                  src={src || '/placeholder.svg'}
+                  src={src}
                   alt={`Event photo ${index + 1}`}
-                  layout='fill'
-                  objectFit='cover'
-                  className='transition-transform duration-300'
+                  fill
+                  className='object-cover transition-transform duration-300'
                   priority={index === 0}
                 />
               </div>
@@ -63,21 +46,19 @@ export const Carousel: React.FC<CarouselProps> = ({ images }) => {
           ))}
         </div>
       </div>
+
       <button
-        className='absolute top-1/2 left-4 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white/90'
+        className='absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors'
         onClick={scrollPrev}
-        // size='icon'
-        // variant='secondary'
       >
-        <ChevronLeft className='h-4 w-4' />
+        <ArrowLeft className='h-6 w-6' />
       </button>
+
       <button
-        className='absolute top-1/2 right-4 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white/90'
+        className='absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors'
         onClick={scrollNext}
-        // size='icon'
-        // variant='secondary'
       >
-        <ChevronRight className='h-4 w-4' />
+        <ArrowRight className='h-6 w-6' />
       </button>
     </div>
   );
