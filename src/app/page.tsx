@@ -139,7 +139,7 @@ export default function Home() {
       <main className='flex-1'>
         <section className='relative h-[600px]'>
           <Image
-            src='/websiteContent/imageSix.jpg'
+            src='/websiteContent/image6.png'
             alt='Grand exit for bride and groom surrounded by guests'
             layout='fill'
             objectFit='cover'
