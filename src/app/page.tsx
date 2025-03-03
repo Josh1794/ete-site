@@ -10,28 +10,28 @@ const galleryImages = [
     alt: 'Bride with mother and sister getting ready',
   },
   {
-    path: '/websiteContent/imageTwo.jpg',
-    alt: 'Bride and groom enjoying a romantic dinner',
+    path: '/websiteContent/image2.png',
+    alt: 'Wedding Ceremony with Bride and Groom',
   },
   {
-    path: '/websiteContent/imageThree.jpeg',
-    alt: 'Groomsmen laughing together',
+    path: '/websiteContent/image3.png',
+    alt: 'Bride and Groom under the Huppah at the ceremony',
   },
   {
-    path: '/websiteContent/imageFour.jpeg',
-    alt: 'Guests parting on the dance floor',
+    path: '/websiteContent/image4.png',
+    alt: 'Bride and Groom Kissing at the ceremony',
   },
   {
-    path: '/websiteContent/imageFive.JPG',
-    alt: 'Bride and groom doing the hora dance',
+    path: '/websiteContent/image5.png',
+    alt: 'Bride and Groom exiting the ceremony with guests blowing bubbles',
   },
   {
     path: '/websiteContent/image6.png',
-    alt: 'Bride and groom exiting the party surrounded by guests',
+    alt: 'Reception room set up for the evening',
   },
   {
-    path: '/websiteContent/imageSeven.jpeg',
-    alt: 'Bride and groom sharing a moment in a vintage NYC cab',
+    path: '/websiteContent/image7.png',
+    alt: 'Bride and groom on the chairs during the hora',
   },
   {
     path: '/websiteContent/image8.png',
@@ -39,19 +39,23 @@ const galleryImages = [
   },
   {
     path: '/websiteContent/image9.png',
-    alt: 'Bride and groom exiting the ceremony with guests blowing bubbles',
+    alt: 'Guests dancing during the wedding reception',
   },
   {
     path: '/websiteContent/image10.png',
-    alt: 'Bride and groom under the Huppah at the ceremony',
+    alt: 'Bride and Groom with guests dancing in santa hats',
   },
   {
     path: '/websiteContent/image11.png',
-    alt: 'Bride and groom exiting the ceremony with guests blowing bubbles',
+    alt: 'Bride and groom exiting the reception with guests holding streamers',
   },
   {
-    path: '/websiteContent/image12.JPG',
-    alt: 'Bride and bridesmaids walking down a NYC street',
+    path: '/websiteContent/image12.png',
+    alt: 'Bride and Groom kissing while crossing the street with wedding party',
+  },
+  {
+    path: '/websiteContent/image13.png',
+    alt: 'Bride and Groom kissing in a classic NYC Taxi Cab',
   },
 ];
 
@@ -59,17 +63,17 @@ const services = [
   {
     name: 'Partial Planning',
     description:
-      'Partial Planning or Month of Coordination are for the couples that have started planning their wedding but want an expert to step in for the final phases. For all packages, we will communicate from the time of booking. For partial planning, the bulk of our work together starts 12 weeks out. For month of, we start meeting weekly 6 weeks out and includes timeline creation.',
+      'For couples who’ve started planning but need professional guidance, our partial planning service ensures every detail is thoughtfully managed. From vendor booking and contract reviews to timeline creation and venue walkthroughs, we help shape your vision into a well-executed plan. With structured meetings, personalized support, and ten hours of onsite coordination, we ensure your wedding day unfolds seamlessly.',
   },
   {
     name: 'Day-of Coordination',
     description:
-      'Day of Coordination is for the couple who has planned their whole wedding and needs someone to execute their plans for the day. Does not include timeline creation.',
+      'You’ve planned it all—now let us bring it to life. Our day-of coordination service ensures a seamless wedding day with vendor communication, setup and breakdown, and expert onsite management. We’ll meet four weeks before your wedding, check in the week of, and provide ten hours of hands-on coordination so you can relax and enjoy every moment. ',
   },
   {
     name: 'Month-of Coordination',
     description:
-      'Month of Coordination is for the couple who has planned their whole wedding and needs someone to execute their plans for the day. Includes timeline creation.',
+      'The final month before your wedding is crucial—let us help you stay organized and stress-free. Starting six weeks out, we’ll review vendor contracts, manage final payments, and keep everything on schedule with regular check-ins. We collaborate with you to finalize logistics, ensuring no detail is overlooked. With ten hours of onsite coordination, we bring it all together so your wedding day unfolds exactly as planned.',
   },
 ];
 
@@ -139,7 +143,7 @@ export default function Home() {
       <main className='flex-1'>
         <section className='relative h-[600px]'>
           <Image
-            src='/websiteContent/image6.png'
+            src='/websiteContent/image11.png'
             alt='Grand exit for bride and groom surrounded by guests'
             layout='fill'
             objectFit='cover'
@@ -170,7 +174,7 @@ export default function Home() {
           </div>
         </section>
         {/* ABOUT SECTION */}
-        <section id='about' className=' p-16'>
+        <section id='about' className='p-16 md:max-w-6xl mx-auto'>
           <h2 className=' md:text-3xl font-medium mb-6 text-center'>
             About Elizabeth Treimanis Events
           </h2>
@@ -184,8 +188,7 @@ export default function Home() {
             diverse professional backgrounds, from executive assistants to
             startup vets to creative industry pros. Her team brings a unique
             perspective to your wedding, drawing on expert knowledge from the
-            wedding industry and beyond. Photo Credits: Sasha Erwitt, Tati and
-            Roman, Maria Burton
+            wedding industry and beyond.
           </p>
           <p className='md:text-lg text-center max-w-1xl mx-auto mt-3'>
             From the time you book, we provide tools, guidance, and open
@@ -201,34 +204,39 @@ export default function Home() {
         </section>
         {/* SERVICES SECTION */}
         <section id='services' className='p-16 bg-muted'>
-          <h2 className='text-3xl font-medium mb-6 text-center'>
-            Our Services
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            {services.map((service) => (
-              <div
-                key={service.name}
-                className='bg-white border rounded-lg p-6 text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg'
-              >
-                <h3 className='text-xl font-normal mb-4'>{service.name}</h3>
-                <p className='text-muted-foreground font-thin'>
-                  {service.description}
-                </p>
-              </div>
-            ))}
+          <div className=' md:max-w-6xl mx-auto'>
+            <h2 className='text-3xl font-medium mb-6 text-center'>
+              Our Services
+            </h2>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+              {services.map((service) => (
+                <div
+                  key={service.name}
+                  className='bg-white border rounded-lg p-6 text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg'
+                >
+                  <h3 className='text-xl font-normal mb-4'>{service.name}</h3>
+                  <p className='text-muted-foreground font-thin'>
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
         {/* VENUES SECTION */}
-        <section id='venues' className='p-16 '>
+        <section
+          id='venues'
+          className='p-16 md:max-w-6xl mx-auto max-md:hidden'
+        >
           <h2 className='text-3xl font-medium mb-8 text-center'>
             Venues We&apos;ve Worked With
           </h2>
-          <p className='text-lg text-center mb-12 max-w-3xl mx-auto text-muted-foreground'>
+          {/* <p className='text-lg text-center mb-12 max-w-3xl mx-auto text-muted-foreground'>
             We&apos;ve had the privilege of creating unforgettable events at
             some of New York&apos;s most prestigious venues. Our established
             relationships with these locations, and others, ensure a seamless
             planning experience.
-          </p>
+          </p> */}
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center'>
             <Image
               src='/websiteContent/social media.png'
