@@ -12,9 +12,9 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: 'Elizabeth Treimanis Events - Wedding and Event Planning',
+  title: 'Elizabeth Treimanis Events - Wedding Coordination and Planning',
   description:
-    'Expert wedding and event planning services by Elizabeth Treimanis. Creating unforgettable moments for your special day.',
+    'Expert wedding and event planning and coordinating services, creating unforgettable moments for your special day.',
 };
 
 export default function RootLayout({
