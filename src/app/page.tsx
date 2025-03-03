@@ -114,7 +114,7 @@ export default function Home() {
             </Link>
             <Link
               href='#venues'
-              className='text-sm font-medium hover:underline underline-offset-4'
+              className='max-md:hidden text-sm font-medium hover:underline underline-offset-4'
             >
               Venues
             </Link>
