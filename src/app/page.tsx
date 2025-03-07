@@ -87,6 +87,7 @@ const BlueSkyIcon = () => (
 );
 
 export default function Home() {
+  const today = new Date().toISOString().split('T')[0];
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
       <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 '>
@@ -339,6 +340,7 @@ export default function Home() {
               <input
                 type='date'
                 id='eventDate'
+                min={today}
                 name='eventDate'
                 className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500'
               />
@@ -379,11 +381,11 @@ export default function Home() {
           <br />
           <a
             className='transition hover:underline hover:text-blue-500'
-            href='mailto:elizabeth@elizabethtreimanisevents.com'
+            href='mailto:hello@elizabethtreimanisevents.com'
             target='_blank'
             rel='noopener noreferrer'
           >
-            elizabeth@elizabethtreimanisevents.com
+            hello@elizabethtreimanisevents.com
           </a>
         </p>
       </footer>
