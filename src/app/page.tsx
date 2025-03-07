@@ -272,7 +272,7 @@ export default function Home() {
               <span className='sr-only'>Instagram</span>
             </a>
             <a
-              href='https://bsky.app/profile/etevents.bsky.social'
+              href='https://bsky.app/profile/elizabethtreimanisevents.com'
               target='_blank'
               rel='noopener noreferrer'
               className='text-gray-600 hover:text-gray-800 transition-colors'
