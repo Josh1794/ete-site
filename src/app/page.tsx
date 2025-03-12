@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Carousel } from './components/Carousel';
 import { Instagram } from 'lucide-react';
 import handler from './action';
+import { ServiceAccordion } from './components/ServiceAccordion';
 
 const galleryImages = [
   {
@@ -204,12 +205,23 @@ export default function Home() {
           </p>
         </section>
         {/* SERVICES SECTION */}
-        <section id='services' className='p-16 bg-muted'>
-          <div className=' md:max-w-6xl mx-auto'>
+        <section id='services' className='p-4 bg-muted'>
+          <div className='md:max-w-6xl mx-auto'>
             <h2 className='text-3xl font-medium mb-6 text-center'>
               Our Services
             </h2>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+            {/* Mobile Accordion */}
+            <div className='md:hidden space-y-4'>
+              {services.map((service) => (
+                <ServiceAccordion
+                  key={service.name}
+                  name={service.name}
+                  description={service.description}
+                />
+              ))}
+            </div>
+            {/* Desktop Cards */}
+            <div className='hidden md:grid grid-cols-3 gap-8'>
               {services.map((service) => (
                 <div
                   key={service.name}
