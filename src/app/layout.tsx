@@ -15,6 +15,16 @@ export const metadata: Metadata = {
   title: 'Elizabeth Treimanis Events - Wedding Coordination and Planning',
   description:
     'Expert wedding and event planning and coordinating services, creating unforgettable moments for your special day.',
+  openGraph: {
+    images: [
+      {
+        url: '/websiteContent/image1.png',
+        height: 630,
+        width: 1200,
+        alt: 'Bride getting ready with mother and sister',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
