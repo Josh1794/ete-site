@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
-      images: ['/websiteContent/image1.png'],
+      images: ['http://elizabethtreimanisevents.com/websiteContent/image1.png'],
     },
     {
       url: 'https://elizabethtreimanisevents.com/#about',
