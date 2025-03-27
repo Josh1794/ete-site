@@ -156,12 +156,7 @@ export default function Home() {
               <h1 className='text-4xl font-normal mb-4'>
                 Elizabeth Treimanis Events
               </h1>
-              <a
-                href='#contact'
-                // href='mailto:elizabeth@elizabethtreimanisevents.com'
-                // target='_blank'
-                // rel='noopener noreferrer'
-              >
+              <a href='#contact'>
                 <button
                   className='rounded-lg bg-stone-700 text-white py-3 px-6 text-lg font-semibold
                      transition-all duration-300 ease-in-out
@@ -244,12 +239,6 @@ export default function Home() {
           <h2 className='text-3xl font-medium mb-8 text-center'>
             Venues We&apos;ve Worked With
           </h2>
-          {/* <p className='text-lg text-center mb-12 max-w-3xl mx-auto text-muted-foreground'>
-            We&apos;ve had the privilege of creating unforgettable events at
-            some of New York&apos;s most prestigious venues. Our established
-            relationships with these locations, and others, ensure a seamless
-            planning experience.
-          </p> */}
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center'>
             <Image
               src='/websiteContent/social media.png'
