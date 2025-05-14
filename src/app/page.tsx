@@ -76,6 +76,11 @@ const services = [
     description:
       'The final month before your wedding is crucial—let us help you stay organized and stress-free. Starting six weeks out, we’ll review vendor contracts, manage final payments, and keep everything on schedule with regular check-ins. We collaborate with you to finalize logistics, ensuring no detail is overlooked. With ten hours of onsite coordination, we bring it all together so your wedding day unfolds exactly as planned.',
   },
+  {
+    name: 'Full Service Planning',
+    description:
+      'For couples who want a stress-free planning experience, our full-service planning package is the ultimate solution. We’ll guide you through every step, from venue selection and vendor booking to design and logistics. With our expertise, we’ll create a personalized wedding that reflects your style and vision. Enjoy peace of mind knowing that every detail is expertly managed, allowing you to focus on what truly matters, celebrating each other.',
+  },
 ];
 
 const BlueSkyIcon = () => (
