@@ -62,6 +62,11 @@ const galleryImages = [
 
 const services = [
   {
+    name: 'Full Service Planning',
+    description:
+      'For couples who want a stress-free planning experience, our full-service planning package is the ultimate solution. We’ll guide you through every step, from venue selection and vendor booking to design and logistics. With our expertise, we’ll create a personalized wedding that reflects your style and vision. Enjoy peace of mind knowing that every detail is expertly managed, allowing you to focus on what truly matters, celebrating each other.',
+  },
+  {
     name: 'Partial Planning',
     description:
       'For couples who’ve started planning but need professional guidance, our partial planning service ensures every detail is thoughtfully managed. From vendor booking and contract reviews to timeline creation and venue walkthroughs, we help shape your vision into a well-executed plan. With structured meetings, personalized support, and ten hours of onsite coordination, we ensure your wedding day unfolds seamlessly.',
@@ -75,11 +80,6 @@ const services = [
     name: 'Month-of Coordination',
     description:
       'The final month before your wedding is crucial—let us help you stay organized and stress-free. Starting six weeks out, we’ll review vendor contracts, manage final payments, and keep everything on schedule with regular check-ins. We collaborate with you to finalize logistics, ensuring no detail is overlooked. With ten hours of onsite coordination, we bring it all together so your wedding day unfolds exactly as planned.',
-  },
-  {
-    name: 'Full Service Planning',
-    description:
-      'For couples who want a stress-free planning experience, our full-service planning package is the ultimate solution. We’ll guide you through every step, from venue selection and vendor booking to design and logistics. With our expertise, we’ll create a personalized wedding that reflects your style and vision. Enjoy peace of mind knowing that every detail is expertly managed, allowing you to focus on what truly matters, celebrating each other.',
   },
 ];
 
@@ -221,7 +221,7 @@ export default function Home() {
               ))}
             </div>
             {/* Desktop Cards */}
-            <div className='hidden md:grid grid-cols-3 gap-8'>
+            <div className='hidden md:grid grid-cols-2 gap-8'>
               {services.map((service) => (
                 <div
                   key={service.name}
