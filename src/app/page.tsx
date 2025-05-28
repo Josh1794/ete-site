@@ -152,8 +152,8 @@ export default function Home() {
           <Image
             src='/websiteContent/image11.png'
             alt='Grand exit for bride and groom surrounded by guests'
-            layout='fill'
-            objectFit='cover'
+            fill
+            className='object-cover'
             priority
           />
           <div className='absolute inset-0 bg-black/30 flex items-center justify-center'>
@@ -335,6 +335,28 @@ export default function Home() {
                 required
                 className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500'
               />
+            </div>
+            <div>
+              <label
+                htmlFor='eventType'
+                className='block text-sm font-medium text-gray-700 mb-1'
+              >
+                Event Type
+              </label>
+              <select
+                id='eventType'
+                name='eventType'
+                required
+                className='w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500'
+              >
+                <option value='' />
+                <option value='Wedding'>Wedding</option>
+                <option value='Elopement'>Elopement</option>
+                <option value='Corporate Event'>Corporate Event</option>
+                <option value='Baby Shower'>Baby Shower</option>
+                <option value="B'nai mitzvah">B&apos;nai mitzvah</option>
+                <option value='Other'>Other</option>
+              </select>
             </div>
             <div>
               <label

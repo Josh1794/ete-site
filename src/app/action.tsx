@@ -10,6 +10,7 @@ export default async function handler(formData: FormData) {
   const email = formData.get('email') as string | null;
   const eventDate = formData.get('eventDate') as string | null;
   const message = formData.get('message') as string | null;
+  const eventType = formData.get('eventType') as string | null;
 
   const { data, error } = await resend.emails.send({
     from: `${process.env.EMAIL_USER}`,
@@ -19,6 +20,7 @@ export default async function handler(formData: FormData) {
       <div>
         <h5>From: {name ?? 'N/A'}</h5>
         <h5>Email: {email ?? 'N/A'}</h5>
+        <h5>Event Type: {eventType ?? 'N/A'}</h5>
         <h5>Event Date: {eventDate ?? 'N/A'}</h5>
         <p>{message ?? 'N/A'}</p>
       </div>
