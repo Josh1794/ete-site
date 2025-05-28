@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Carousel } from './components/Carousel';
-import { Instagram } from 'lucide-react';
 import handler from './action';
 import { ServiceAccordion } from './components/ServiceAccordion';
 
@@ -367,7 +366,7 @@ export default function Home() {
                     <option value='Elopement'>Elopement</option>
                     <option value='Corporate Event'>Corporate Event</option>
                     <option value='Baby Shower'>Baby Shower</option>
-                    <option value="B'nai mitzvah">B'nai mitzvah</option>
+                    <option value="B'nai mitzvah">B&apos;nai mitzvah</option>
                     <option value='Other'>Other</option>
                   </select>
                 </div>
