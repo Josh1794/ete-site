@@ -15,6 +15,20 @@ export const metadata: Metadata = {
   title: 'Elizabeth Treimanis Events - Wedding Coordination and Planning',
   description:
     'Expert wedding and event planning and coordinating services, creating unforgettable moments for your special day.',
+  publisher: 'Elizabeth Treimanis Events',
+  creator: 'Joshua Grossman',
+  keywords: [
+    'wedding planning',
+    'event coordination',
+    'wedding coordinator',
+    'wedding planner',
+    'wedding services',
+    'event planning',
+    'wedding',
+    'wedding events',
+    'wedding coordination',
+  ],
+
   openGraph: {
     images: [
       {
