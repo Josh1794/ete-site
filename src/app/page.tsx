@@ -92,6 +92,15 @@ const BlueSkyIcon = () => (
   />
 );
 
+const InstagramIcon = () => (
+  <Image
+    src='/websiteContent/instagram.svg'
+    width='40'
+    height='40'
+    alt='Instagram Logo'
+  />
+);
+
 export default function Home() {
   const today = new Date().toISOString().split('T')[0];
   return (
@@ -274,7 +283,7 @@ export default function Home() {
               rel='noopener noreferrer'
               className='text-gray-600 hover:text-gray-800 transition-colors'
             >
-              <Instagram size={40} />
+              <InstagramIcon />
               <span className='sr-only'>Instagram</span>
             </a>
             <a
