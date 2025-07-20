@@ -265,10 +265,16 @@ export default function Home() {
         </section>
         {/* GALLERY SECTION */}
         <section id='gallery' className='py-16 bg-muted'>
-          {/* <h2 className='text-3xl font-medium mb-8 text-center'>
+          <h2 className='text-3xl font-medium mb-8 text-center'>
             Special Moments
-          </h2> */}
-          <Carousel images={galleryImages} />
+          </h2>
+          <Carousel
+            images={galleryImages}
+            autoPlay={true}
+            autoPlayInterval={4000}
+            showDots={true}
+            showArrows={true}
+          />
         </section>
         {/* SOCIALS SECTION */}
         <section id='social' className='p-16 '>
