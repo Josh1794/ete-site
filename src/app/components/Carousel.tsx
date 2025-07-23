@@ -121,7 +121,7 @@ export const Carousel: React.FC<CarouselProps> = ({
                 key={index}
                 className='flex-[0_0_100%] sm:flex-[0_0_90%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 pr-4'
               >
-                <div className='relative aspect-[4/3] sm:aspect-[16/9] cursor-pointer overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02]'>
+                <div className='relative aspect-[4/3] sm:aspect-[16/9]  overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02]'>
                   <Image
                     src={image.path}
                     alt={image.alt}
@@ -136,13 +136,6 @@ export const Carousel: React.FC<CarouselProps> = ({
                       <div className='w-8 h-8 border-4 border-stone-400 border-t-transparent rounded-full animate-spin'></div>
                     </div>
                   )}
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                    <div className='absolute bottom-4 left-4 right-4 text-white'>
-                      <p className='text-sm sm:text-base font-medium truncate'>
-                        {image.alt}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
