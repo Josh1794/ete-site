@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/websiteContent/image1.png',
+        url: 'https://elizabethtreimanisevents.com/websiteContent/image1.png',
         height: 630,
         width: 1200,
         alt: 'Bride getting ready with mother and sister',
