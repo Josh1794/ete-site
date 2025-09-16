@@ -96,9 +96,6 @@ export const Carousel: React.FC<CarouselProps> = ({
       } else if (event.key === 'ArrowRight') {
         event.preventDefault();
         scrollNext();
-      } else if (event.key === ' ') {
-        event.preventDefault();
-        toggleAutoPlay();
       }
     };
 

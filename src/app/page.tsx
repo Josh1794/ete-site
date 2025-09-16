@@ -320,19 +320,8 @@ export default function Home() {
             <h2 className='text-3xl font-medium mb-8 text-center'>
               Get in Touch
             </h2>
-            <p className='text-md font-medium mb-8 text-center'>
-              For inquiries please reach out to{' '}
-              <a
-                className='transition hover:underline hover:text-blue-500'
-                href='mailto:hello@elizabethtreimanisevents.com'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                hello@elizabethtreimanisevents.com
-              </a>{' '}
-              for more information.
-            </p>
-            {/* <form action={handler} className='space-y-8'>
+
+            <form action={handler} className='space-y-8'>
               <div className='grid md:grid-cols-2 gap-6'>
                 <div className='space-y-2'>
                   <label
@@ -342,7 +331,7 @@ export default function Home() {
                     Name
                   </label>
                   <input
-                    type='text'
+                    // type='text'
                     id='name'
                     name='name'
                     required
@@ -428,7 +417,7 @@ export default function Home() {
               >
                 Send Message
               </button>
-            </form> */}
+            </form>
           </div>
         </section>
       </main>
