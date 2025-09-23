@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import { Toaster } from 'sonner';
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${raleway.className} font-raleway`}>
         {children}
+        <Toaster position='top-center' richColors />
         <SpeedInsights />
         <Analytics />
       </body>

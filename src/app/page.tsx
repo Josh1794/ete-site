@@ -1,8 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Carousel } from './components/Carousel';
 import handler from './action';
 import { ServiceAccordion } from './components/ServiceAccordion';
+import { useFormStatus } from 'react-dom';
+import { toast } from 'sonner';
 
 const galleryImages = [
   {
@@ -100,8 +104,43 @@ const InstagramIcon = () => (
   />
 );
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type='submit'
+      disabled={pending}
+      className='w-full rounded-lg bg-stone-800 text-white py-4 px-6 text-lg font-medium
+        transition-all duration-300 ease-in-out
+        hover:bg-stone-700 hover:shadow-lg active:transform active:scale-[0.98]
+        focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2
+        disabled:opacity-50 disabled:cursor-not-allowed'
+    >
+      {pending ? 'Sending...' : 'Send Message'}
+    </button>
+  );
+}
+
 export default function Home() {
   const today = new Date().toISOString().split('T')[0];
+
+  async function handleSubmit(formData: FormData) {
+    try {
+      const result = await handler(formData);
+      if (result?.error) {
+        toast.error('Failed to send message. Please try again.');
+      } else {
+        toast.success('Message sent successfully!');
+        const form = document.getElementById('contact-form') as HTMLFormElement;
+        form?.reset();
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Something went wrong. Please try again.');
+    }
+  }
+
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
       <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 '>
@@ -312,6 +351,18 @@ export default function Home() {
                 src='/websiteContent/zolaImage.png'
               />
             </a>
+            <a
+              target='_blank'
+              href='https://www.tiktok.com/@elizabethtreimanisevents'
+              rel='noreferrer'
+            >
+              <Image
+                height='40'
+                width='40'
+                alt='Tik Tok Logo'
+                src='/websiteContent/tiktoklogo.png'
+              />
+            </a>
           </div>
         </section>
         {/* CONTACT SECTION */}
@@ -321,7 +372,7 @@ export default function Home() {
               Get in Touch
             </h2>
 
-            <form action={handler} className='space-y-8'>
+            <form id='contact-form' action={handleSubmit} className='space-y-8'>
               <div className='grid md:grid-cols-2 gap-6'>
                 <div className='space-y-2'>
                   <label
@@ -408,15 +459,7 @@ export default function Home() {
                   className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-stone-500 transition-colors resize-none'
                 />
               </div>
-              <button
-                type='submit'
-                className='w-full rounded-lg bg-stone-800 text-white py-4 px-6 text-lg font-medium
-                  transition-all duration-300 ease-in-out
-                  hover:bg-stone-700 hover:shadow-lg active:transform active:scale-[0.98]
-                  focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2'
-              >
-                Send Message
-              </button>
+              <SubmitButton />
             </form>
           </div>
         </section>
