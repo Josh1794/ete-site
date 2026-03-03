@@ -114,7 +114,7 @@ function SubmitButton() {
       className='w-full rounded-lg bg-stone-800 text-white py-4 px-6 text-lg font-medium
         transition-all duration-300 ease-in-out
         hover:bg-stone-700 hover:shadow-lg active:transform active:scale-[0.98]
-        focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2
+        focus:outline-hidden focus:ring-2 focus:ring-stone-500 focus:ring-offset-2
         disabled:opacity-50 disabled:cursor-not-allowed'
     >
       {pending ? 'Sending...' : 'Send Message'}
@@ -143,7 +143,7 @@ export default function Home() {
 
   return (
     <div className='flex flex-col min-h-screen min-w-screen font-thin'>
-      <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 '>
+      <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-white/60 '>
         <div className='hidden md:flex h-14 items-center pl-3 pr-3'>
           <Link href='/' className='flex items-center space-x-2'>
             <span className='font-normal text-xl'>
@@ -214,7 +214,7 @@ export default function Home() {
                      transition-all duration-300 ease-in-out
                      hover:bg-white hover:text-stone-800 hover:shadow-lg
                      transform hover:scale-105 hover:-translate-y-1
-                     focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-opacity-50'
+                     focus:outline-hidden focus:ring-2 focus:ring-stone-500 focus:ring-opacity-50'
                 >
                   Plan Your Event
                 </button>
@@ -386,7 +386,7 @@ export default function Home() {
                     id='name'
                     name='name'
                     required
-                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-stone-500 transition-colors'
+                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-hidden focus:border-stone-500 transition-colors'
                   />
                 </div>
                 <div className='space-y-2'>
@@ -401,7 +401,7 @@ export default function Home() {
                     id='email'
                     name='email'
                     required
-                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-stone-500 transition-colors'
+                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-hidden focus:border-stone-500 transition-colors'
                   />
                 </div>
               </div>
@@ -417,7 +417,7 @@ export default function Home() {
                     id='eventType'
                     name='eventType'
                     required
-                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-stone-500 transition-colors'
+                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-hidden focus:border-stone-500 transition-colors'
                   >
                     <option value=''>Select event type</option>
                     <option value='Wedding'>Wedding</option>
@@ -440,7 +440,7 @@ export default function Home() {
                     id='eventDate'
                     name='eventDate'
                     min={today}
-                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-stone-500 transition-colors'
+                    className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-hidden focus:border-stone-500 transition-colors'
                   />
                 </div>
               </div>
@@ -456,7 +456,7 @@ export default function Home() {
                   name='message'
                   required
                   rows={4}
-                  className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-stone-500 transition-colors resize-none'
+                  className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-hidden focus:border-stone-500 transition-colors resize-none'
                 />
               </div>
               <SubmitButton />

@@ -118,7 +118,7 @@ export const Carousel: React.FC<CarouselProps> = ({
                 key={index}
                 className='flex-[0_0_100%] sm:flex-[0_0_90%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 pr-4'
               >
-                <div className='relative aspect-[4/3] sm:aspect-[16/9]  overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02]'>
+                <div className='relative aspect-4/3 sm:aspect-video  overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02]'>
                   <Image
                     src={image.path}
                     alt={image.alt}
@@ -141,7 +141,7 @@ export const Carousel: React.FC<CarouselProps> = ({
         {showArrows && (
           <>
             <button
-              className='absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-stone-500'
+              className='absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-xs p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-stone-500'
               onClick={scrollPrev}
               aria-label='Previous image'
             >
@@ -149,7 +149,7 @@ export const Carousel: React.FC<CarouselProps> = ({
             </button>
 
             <button
-              className='absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-stone-500'
+              className='absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-xs p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-stone-500'
               onClick={scrollNext}
               aria-label='Next image'
             >
@@ -159,7 +159,7 @@ export const Carousel: React.FC<CarouselProps> = ({
         )}
         {autoPlay && (
           <button
-            className='absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-stone-500'
+            className='absolute top-4 right-4 bg-white/90 backdrop-blur-xs p-2 rounded-full shadow-lg hover:bg-white transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-stone-500'
             onClick={toggleAutoPlay}
             aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
           >
@@ -176,7 +176,7 @@ export const Carousel: React.FC<CarouselProps> = ({
           {images.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 ${
                 index === selectedIndex
                   ? 'bg-stone-800 scale-125'
                   : 'bg-stone-300 hover:bg-stone-400'
