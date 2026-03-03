@@ -208,27 +208,26 @@ export default function Home() {
               <h1 className='text-4xl font-normal mb-4'>
                 Elizabeth Treimanis Events
               </h1>
-              <a href='#contact'>
-                <button
-                  className='rounded-lg bg-stone-700 text-white py-3 px-6 text-lg font-semibold
-                     transition-all duration-300 ease-in-out
-                     hover:bg-white hover:text-stone-800 hover:shadow-lg
-                     transform hover:scale-105 hover:-translate-y-1
-                     focus:outline-hidden focus:ring-2 focus:ring-stone-500 focus:ring-opacity-50'
-                >
-                  Plan Your Event
-                </button>
+              <a
+                href='#contact'
+                className='inline-block rounded-lg bg-stone-700 text-white py-3 px-6 text-lg font-semibold
+                   transition-all duration-300 ease-in-out
+                   hover:bg-white hover:text-stone-800 hover:shadow-lg
+                   transform hover:scale-105 hover:-translate-y-1
+                   focus:outline-hidden focus:ring-2 focus:ring-stone-500 focus:ring-opacity-50'
+              >
+                Plan Your Event
               </a>
             </div>
           </div>
         </section>
         {/* ABOUT SECTION */}
         <section id='about' className='p-16 md:max-w-6xl mx-auto'>
-          <h2 className=' md:text-3xl font-medium mb-6 text-center'>
+          <h2 className='text-2xl md:text-3xl font-medium mb-6 text-center'>
             About Elizabeth Treimanis Events
           </h2>
 
-          <p className='md:text-lg text-center max-w-1xl mx-auto'>
+          <p className='md:text-lg text-center max-w-2xl mx-auto'>
             Elizabeth Treimanis Events is a wedding coordination firm founded by
             Elizabeth Treimanis, a former executive assistant in luxury fashion
             and beauty. Her industry experience enables her to add a chic,
@@ -239,7 +238,7 @@ export default function Home() {
             perspective to your wedding, drawing on expert knowledge from the
             wedding industry and beyond.
           </p>
-          <p className='md:text-lg text-center max-w-1xl mx-auto mt-3'>
+          <p className='md:text-lg text-center max-w-2xl mx-auto mt-3'>
             From the time you book, we provide tools, guidance, and open
             communication, ensuring a seamless handoff when we step in. Whether
             you book us for partial planning, month-of or day-of coordination,
@@ -295,9 +294,8 @@ export default function Home() {
             <Image
               src='/websiteContent/social media.png'
               alt='Collage of logos from venues where we have worked'
-              layout='responsive'
-              width='400'
-              height='400'
+              width={400}
+              height={400}
               className='col-span-2 md:col-span-3 lg:col-span-4 w-full h-auto'
             />
           </div>
@@ -382,7 +380,7 @@ export default function Home() {
                     Name
                   </label>
                   <input
-                    // type='text'
+                    type='text'
                     id='name'
                     name='name'
                     required
@@ -465,20 +463,24 @@ export default function Home() {
         </section>
       </main>
       {/* FOOTER */}
-      <footer className='border-t py-6 text-center'>
-        <p>
-          &copy; {new Date().getFullYear()} Elizabeth Treimanis Events. All
-          rights reserved.
-          <br />
+      <footer className='border-t py-8 px-6'>
+        <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4'>
+          <p className='text-sm text-gray-600 text-center md:text-left'>
+            &copy; {new Date().getFullYear()} Elizabeth Treimanis Events. All rights reserved.
+          </p>
+          <nav className='flex flex-wrap justify-center gap-4 text-sm'>
+            <Link href='#about' className='text-gray-600 hover:underline underline-offset-4'>About</Link>
+            <Link href='#services' className='text-gray-600 hover:underline underline-offset-4'>Services</Link>
+            <Link href='#gallery' className='text-gray-600 hover:underline underline-offset-4'>Gallery</Link>
+            <Link href='#contact' className='text-gray-600 hover:underline underline-offset-4'>Contact</Link>
+          </nav>
           <a
-            className='transition hover:underline hover:text-blue-500'
+            className='text-sm text-gray-600 transition hover:underline hover:text-blue-500'
             href='mailto:hello@elizabethtreimanisevents.com'
-            target='_blank'
-            rel='noopener noreferrer'
           >
             hello@elizabethtreimanisevents.com
           </a>
-        </p>
+        </div>
       </footer>
     </div>
   );

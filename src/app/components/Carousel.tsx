@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
@@ -32,6 +32,7 @@ export const Carousel: React.FC<CarouselProps> = ({
     dragFree: false,
   });
 
+  const containerRef = useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [isLoading, setIsLoading] = useState(true);
@@ -87,8 +88,11 @@ export const Carousel: React.FC<CarouselProps> = ({
     };
   }, [emblaApi, onSelect]);
 
-  // Handle keyboard navigation
+  // Handle keyboard navigation (scoped to carousel container)
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
@@ -99,12 +103,12 @@ export const Carousel: React.FC<CarouselProps> = ({
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [scrollPrev, scrollNext, toggleAutoPlay]);
+    container.addEventListener('keydown', handleKeyDown);
+    return () => container.removeEventListener('keydown', handleKeyDown);
+  }, [scrollPrev, scrollNext]);
 
   return (
-    <div className='relative mx-auto max-w-7xl px-4'>
+    <div ref={containerRef} tabIndex={-1} className='relative mx-auto max-w-7xl px-4 outline-hidden'>
       <div className='relative group'>
         <div
           className='overflow-hidden rounded-xl shadow-2xl bg-transparent'
@@ -172,20 +176,10 @@ export const Carousel: React.FC<CarouselProps> = ({
         )}
       </div>
       {showDots && (
-        <div className='flex justify-center mt-6 space-x-2'>
-          {images.map((_, index) => (
-            <button
-              key={index}
-              className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 ${
-                index === selectedIndex
-                  ? 'bg-stone-800 scale-125'
-                  : 'bg-stone-300 hover:bg-stone-400'
-              }`}
-              onClick={() => scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-current={index === selectedIndex ? 'true' : 'false'}
-            />
-          ))}
+        <div className='flex justify-center mt-6'>
+          <span className='text-sm text-stone-500 tabular-nums'>
+            {selectedIndex + 1} / {images.length}
+          </span>
         </div>
       )}
     </div>
