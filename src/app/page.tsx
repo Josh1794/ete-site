@@ -142,7 +142,7 @@ export default function Home() {
   }
 
   return (
-    <div className='flex flex-col min-h-screen min-w-screen font-thin'>
+    <div className='flex flex-col min-h-screen min-w-screen font-light'>
       <header className='min-h-12 flex flex-row items-center justify-center md:justify-between sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-white/60 '>
         <div className='hidden md:flex h-14 items-center pl-3 pr-3'>
           <Link href='/' className='flex items-center space-x-2'>
@@ -195,7 +195,7 @@ export default function Home() {
       </header>
       {/* MAIN SECTION */}
       <main className='flex-1'>
-        <section className='relative h-[600px]'>
+        <section className='relative min-h-[70vh]'>
           <Image
             src='/websiteContent/image11.png'
             alt='Grand exit for bride and groom surrounded by guests'
@@ -203,18 +203,21 @@ export default function Home() {
             className='object-cover'
             priority
           />
-          <div className='absolute inset-0 bg-black/30 flex items-center justify-center'>
+          <div className='absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-black/10 flex items-center justify-center'>
             <div className='text-center text-white'>
-              <h1 className='text-4xl font-normal mb-4'>
+              <h1 className='text-4xl md:text-6xl font-normal mb-3'>
                 Elizabeth Treimanis Events
               </h1>
+              <p className='text-base md:text-lg font-light tracking-widest uppercase mb-8 text-white/80'>
+                Wedding &amp; Event Coordination
+              </p>
               <a
                 href='#contact'
-                className='inline-block rounded-lg bg-stone-700 text-white py-3 px-6 text-lg font-semibold
+                className='inline-block rounded-lg bg-gold text-white py-3 px-8 text-lg font-medium
                    transition-all duration-300 ease-in-out
                    hover:bg-white hover:text-stone-800 hover:shadow-lg
                    transform hover:scale-105 hover:-translate-y-1
-                   focus:outline-hidden focus:ring-2 focus:ring-stone-500 focus:ring-opacity-50'
+                   focus:outline-hidden focus:ring-2 focus:ring-gold focus:ring-opacity-50'
               >
                 Plan Your Event
               </a>
