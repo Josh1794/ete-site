@@ -7,6 +7,9 @@ import handler from './action';
 import { ServiceAccordion } from './components/ServiceAccordion';
 import { useFormStatus } from 'react-dom';
 import { toast } from 'sonner';
+import { RainbowButton } from '@/components/magicui/rainbow-button';
+import { Marquee } from '@/components/magicui/marquee';
+import testimoniesData from '../../public/websiteContent/testimonies.json';
 
 const galleryImages = [
   {
@@ -104,6 +107,28 @@ const InstagramIcon = () => (
   />
 );
 
+function TestimonialCard({
+  name,
+  title,
+  testimony,
+}: {
+  name: string;
+  title: string;
+  testimony: string;
+}) {
+  return (
+    <div className='relative w-80 shrink-0 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-transform duration-300 hover:scale-105 hover:shadow-md'>
+      <p className='mb-4 text-sm leading-relaxed text-gray-600 line-clamp-6'>
+        &ldquo;{testimony}&rdquo;
+      </p>
+      <div>
+        <p className='text-sm font-medium text-gray-900'>{name}</p>
+        <p className='text-xs text-gold'>{title}</p>
+      </div>
+    </div>
+  );
+}
+
 function SubmitButton() {
   const { pending } = useFormStatus();
 
@@ -179,6 +204,12 @@ export default function Home() {
               Gallery
             </Link>
             <Link
+              href='#testimonials'
+              className='max-md:hidden text-sm font-medium hover:underline underline-offset-4'
+            >
+              Reviews
+            </Link>
+            <Link
               href='#social'
               className='text-sm font-medium hover:underline underline-offset-4'
             >
@@ -211,16 +242,9 @@ export default function Home() {
               <p className='text-base md:text-lg font-light tracking-widest uppercase mb-8 text-white/80'>
                 Wedding &amp; Event Coordination
               </p>
-              <a
-                href='#contact'
-                className='inline-block rounded-lg bg-gold text-white py-3 px-8 text-lg font-medium
-                   transition-all duration-300 ease-in-out
-                   hover:bg-white hover:text-stone-800 hover:shadow-lg
-                   transform hover:scale-105 hover:-translate-y-1
-                   focus:outline-hidden focus:ring-2 focus:ring-gold focus:ring-opacity-50'
-              >
+              <RainbowButton href='#contact'>
                 Plan Your Event
-              </a>
+              </RainbowButton>
             </div>
           </div>
         </section>
@@ -316,8 +340,28 @@ export default function Home() {
             showArrows={true}
           />
         </section>
+        {/* TESTIMONIALS SECTION */}
+        <section id='testimonials' className='py-16 '>
+          <h2 className='text-3xl font-medium mb-10 text-center'>
+            What Our Clients Say
+          </h2>
+          <div className='max-w-7xl mx-auto px-4'>
+            <div className='relative overflow-hidden py-4 mask-[linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]'>
+              <Marquee pauseOnHover repeat={4} className='[--duration:50s]'>
+                {testimoniesData.testimonies.map((t) => (
+                  <TestimonialCard
+                    key={t.name}
+                    name={t.name}
+                    title={t.title}
+                    testimony={t.testimony}
+                  />
+                ))}
+              </Marquee>
+            </div>
+          </div>
+        </section>
         {/* SOCIALS SECTION */}
-        <section id='social' className='p-16 '>
+        <section id='social' className='p-16 bg-muted'>
           <h2 className='text-3xl font-medium mb-8 text-center'>
             Connect With Us
           </h2>
@@ -367,7 +411,7 @@ export default function Home() {
           </div>
         </section>
         {/* CONTACT SECTION */}
-        <section id='contact' className='p-8 md:p-16 bg-muted'>
+        <section id='contact' className='p-8 md:p-16 '>
           <div className='max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8'>
             <h2 className='text-3xl font-medium mb-8 text-center'>
               Get in Touch

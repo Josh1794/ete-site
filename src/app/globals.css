@@ -5,6 +5,94 @@
   --color-foreground: var(--foreground);
   --color-muted: #f1f5f9;
   --color-gold: #c9a96e;
+  --animate-rainbow: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap, 1rem))); }
+}
+
+@keyframes marquee-vertical {
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(-100% - var(--gap, 1rem))); }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+
+.marquee-pause:hover .animate-marquee,
+.marquee-pause:hover .animate-marquee-vertical {
+  animation-play-state: paused;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}
+
+.rainbow-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  background-clip: padding-box, border-box, border-box;
+  background-origin: border-box;
+  background-size: 200%;
+  background-image:
+    linear-gradient(#1c1c1c, #1c1c1c),
+    linear-gradient(#1c1c1c 50%, rgba(28, 28, 28, 0.5) 80%, rgba(28, 28, 28, 0)),
+    linear-gradient(90deg,
+      hsl(var(--color-1)),
+      hsl(var(--color-5)),
+      hsl(var(--color-3)),
+      hsl(var(--color-4)),
+      hsl(var(--color-2))
+    );
+  animation: rainbow 2s linear infinite;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rainbow-button:hover {
+  transform: scale(1.05);
+}
+
+.rainbow-button:hover::before {
+  transform: translateX(-50%) scale(0.952);
+}
+
+.rainbow-button::before {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  z-index: -1;
+  height: 25%;
+  width: 60%;
+  transform: translateX(-50%);
+  background-size: 200%;
+  background-image: linear-gradient(90deg,
+    hsl(var(--color-1)),
+    hsl(var(--color-5)),
+    hsl(var(--color-3)),
+    hsl(var(--color-4)),
+    hsl(var(--color-2))
+  );
+  filter: blur(0.8rem);
+  animation: rainbow 2s linear infinite;
 }
 
 /*
@@ -27,6 +115,12 @@
 
 @layer base {
   :root {
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
