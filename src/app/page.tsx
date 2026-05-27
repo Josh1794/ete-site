@@ -715,6 +715,15 @@ export default function Home() {
               }
               className="space-y-8"
             >
+              {/* Honeypot: hidden from users, visible to bots. */}
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="sr-only"
+              />
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label
